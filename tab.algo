@@ -1,0 +1,37 @@
+ALGORITHM commun_el
+VAR
+ tab2,tab1:ARRAY_OF_INTEGER[20]
+ i,j,sum:INTEGER
+ sum=0
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+    FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+        IF (tab1[i]=tab2[j]) THEN
+            sum:=(sum+tab1[i])*2
+        END_IF
+    END_FOR
+    END_FOR
+    write(sum)
+ END
+
+
+
+ALGORITHM different_el
+VAR
+ tab2,tab1:ARRAY_OF_INTEGER[20]
+ i,j,sum:INTEGER
+ sum=0
+ exist:BOOLEAN
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+    FOR i FROM 0 TO tab2.length STEP 1  DO
+         IF (tab1[i]=tab2[j]) THEN
+            exist=false
+        END_IF
+        IF (exist=true) THEN
+          sum:=sum+tab1[i]+tab2[j]
+        END_IF
+    END_FOR    
+    END_FOR
+    write(sum)
+END

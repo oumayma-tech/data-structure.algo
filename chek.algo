@@ -1,0 +1,50 @@
+ALGORITHM COMMUN_EL
+VAR 
+ hash : HASH_TABLE<INTEGER,INTEGER>
+ arr1,arr2: ARRAY_OF_INTEGER[20];
+ i,j,k,sum:INTEGER;
+ sum:=0
+BEGIN
+    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+        IF (hash.lookup(arr1[i]=true) THEN
+            hash.insert(arr1[i],2)
+        ELSE
+           hash.insert(arr1[i],1)
+        END_IF
+    END_FOR
+    FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+     IF (hash.lookup(arr2[j])=true) THEN
+          hash.insert(arr2[j],2)
+    ELSE
+          hash.insert(arr2[j],1)
+        END_IF
+     END_FOR
+    FOR k FROM 0 TO arr1.length-1 STEP 1 DO
+     IF (hash.get(arr[k])=2) THEN
+     sum:=(sum+arr1[k])
+     END_IF
+     END_FOR
+     write(sum)   
+    
+ END
+
+
+ALGORITHM diffrent_el
+VAR
+ hash : HASH_TABLE<INTEGER,INTEGER>
+ arr1,arr2:ARRAY_OF_INTEGER[20]
+ i,j,sum:INTEGER
+BEGIN
+ FOR i FROM 0 TO arr1.length-1 STEP 1 DO
+       IF (hash.get(arr1[i]=1)) THEN 
+           sum1:=sum1+arr1[i]
+           END_IF
+FOR j FROM 0 TO arr2.length STEP 1  DO
+    IF (hash.get(arr2[j]=1)) THEN
+        sum2:=sum2+arr2[j]
+    END_IF
+END_FOR
+ END_FOR
+ sum:=sum1+sum2
+ write(sum)  
+END
